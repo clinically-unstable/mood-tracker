@@ -43,42 +43,42 @@ int main() {
             cin >> option;
             if (option == "ok") {
              
-                int dealerCard1 = rand() % 11 + 1;
-                int dealerCard2 = rand() % 11 + 1;
-                int dealerTotal = dealerCard1 + dealerCard2;
-                cout << "i draw: " << dealerCard1 << " and " << dealerCard2 << " (Total: " << dealerTotal << ")\n";
+                int cards1 = rand() % 11 + 1;
+                int cards2 = rand() % 11 + 1;
+                int total2 = cards1 + cards2;
+                cout << "i draw: " << cards1 << " and " << cards2 << " (Total: " << total2 << ")\n";
 
              
-                int playerCard1 = rand() % 11 + 1;
-                int playerCard2 = rand() % 11 + 1;
-                int playerTotal = playerCard1 + playerCard2;
-                cout << "you drew: " << playerCard1 << " and " << playerCard2 << " (Total: " << playerTotal << ")\n";
+                int card1 = rand() % 11 + 1;
+                int card2 = rand() % 11 + 1;
+                int total = card1 + card2;
+                cout << "you drew: " << card1 << " and " << card2 << " (Total: " << total << ")\n";
 
                 string option2;
                 cout << "would you like to hit or stay? ";
                 cin >> option2;
 
                 if (option2 == "hit") {
-                    int playerCard3 = rand() % 11 + 1;
-                    playerTotal += playerCard3;
-                    cout << "you drew: " << playerCard3 << ". you have uhh " << playerTotal << endl;
+                    int card3 = rand() % 11 + 1;
+                    total += card3;
+                    cout << "you drew: " << card3 << ". you have uhh " << total << endl;
                 }
 
               
-                if (dealerTotal < 17) {
-                    int dealerCard3 = rand() % 11 + 1;
-                    dealerTotal += dealerCard3;
-                    cout << "i hit and draw: " << dealerCard3 << ". i have umm " << dealerTotal << endl;
+                if (total2 < 17) {
+                    int cards3 = rand() % 11 + 1;
+                    total2 += cards3;
+                    cout << "i hit and draw: " << cards3 << ". i have umm " << total2 << endl;
                 }
 
                 
-                if (playerTotal > 21) {
+                if (total > 21) {
                     cout << "damn you suck.\n";
-                } else if (dealerTotal > 21) {
+                } else if (total2 > 21) {
                     cout << "damn i suck, this is all your fault\n";
-                } else if (playerTotal > dealerTotal) {
+                } else if (total > total2) {
                     cout << "you win, how this was rigged.\n";
-                } else if (playerTotal < dealerTotal) {
+                } else if (total < total2) {
                     cout << "you lost lol\n";
                 } else {
                     cout << "erg\n";
