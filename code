@@ -37,7 +37,7 @@ int main() {
             cout << "i yearn for C++\n";
             break;
         // extra is here, i used random
-        default: {
+        case 7: {
             cout << "1v1 me in blackjack\nType 'ok' if you want to play: ";
             string option;
             cin >> option;
@@ -87,7 +87,10 @@ int main() {
                 cout << "whats wrong with you\n";
             }
             break;
-        }
+        } 
+        default: 
+            cout << "That's not an option pal, we're leaking your home address";
+            break;
     }
 
     return 0;
