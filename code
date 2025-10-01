@@ -1,0 +1,94 @@
+/*Matthew Ren
+Mrs. Alblas
+10/1/25
+Software Design*/
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    srand(time(0)); // rng found online with a cool little tutorial
+
+    int mood;
+    cout << "You aint choosing an emotion, go roll for one. (Use a number 1-6.)\n";
+    cin >> mood;
+
+    switch (mood) {
+        case 1:
+            cout << "I feel like I'm gonna combust soon\n";
+            break;
+        case 2:
+            cout << "I'm kinda happy I guess\n";
+            break;
+        case 3:
+            cout << "I feel like Adam\n";
+            break;
+        case 4:
+            cout << "depressed.\n";
+            break;
+        case 5:
+            cout << "it's okay.\n";
+            break;
+        case 6:
+            cout << "i yearn for C++\n";
+            break;
+        // extra is here, i used random
+        default: {
+            cout << "1v1 me in blackjack\nType 'ok' if you want to play: ";
+            string option;
+            cin >> option;
+            if (option == "ok") {
+             
+                int dealerCard1 = rand() % 11 + 1;
+                int dealerCard2 = rand() % 11 + 1;
+                int dealerTotal = dealerCard1 + dealerCard2;
+                cout << "i draw: " << dealerCard1 << " and " << dealerCard2 << " (Total: " << dealerTotal << ")\n";
+
+             
+                int playerCard1 = rand() % 11 + 1;
+                int playerCard2 = rand() % 11 + 1;
+                int playerTotal = playerCard1 + playerCard2;
+                cout << "you drew: " << playerCard1 << " and " << playerCard2 << " (Total: " << playerTotal << ")\n";
+
+                string option2;
+                cout << "would you like to hit or stay? ";
+                cin >> option2;
+
+                if (option2 == "hit") {
+                    int playerCard3 = rand() % 11 + 1;
+                    playerTotal += playerCard3;
+                    cout << "you drew: " << playerCard3 << ". you have uhh " << playerTotal << endl;
+                }
+
+              
+                if (dealerTotal < 17) {
+                    int dealerCard3 = rand() % 11 + 1;
+                    dealerTotal += dealerCard3;
+                    cout << "i hit and draw: " << dealerCard3 << ". i have umm " << dealerTotal << endl;
+                }
+
+                
+                if (playerTotal > 21) {
+                    cout << "damn you suck.\n";
+                } else if (dealerTotal > 21) {
+                    cout << "damn i suck, this is all your fault\n";
+                } else if (playerTotal > dealerTotal) {
+                    cout << "you win, how this was rigged.\n";
+                } else if (playerTotal < dealerTotal) {
+                    cout << "you lost lol\n";
+                } else {
+                    cout << "erg\n";
+                }
+            } else {
+                cout << "whats wrong with you\n";
+            }
+            break;
+        }
+    }
+
+    return 0;
+}
